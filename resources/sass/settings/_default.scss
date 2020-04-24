@@ -1,0 +1,30 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: $black;
+    overflow-y: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure {
+    margin: 0;
+}
+
+a {
+    &:link,
+    &:visited,
+    &:focus,
+    &:hover,
+    &:active {
+        text-decoration: none;
+    }
+}
+
+    

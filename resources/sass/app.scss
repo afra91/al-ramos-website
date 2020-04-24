@@ -1,1 +1,18 @@
-//
+@import "~bootstrap-4-grid/scss/grid";
+
+@import "./settings/_variables";
+@import "./settings/_mixins";
+@import "./settings/_fonts";
+@import "./settings/_palette";
+@import "./settings/_default";
+
+main {
+    background-image: url("../images/vim-split-windows-filtered.png");
+    background-attachment: fixed;
+    background-position: center;
+    height: 100vh;
+}
+div {
+    color: $white;
+    font-family: JetBrainsMonoBold;
+}

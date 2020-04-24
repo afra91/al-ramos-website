@@ -1,0 +1,21 @@
+@mixin font-face($name, $file) {
+    $fontsPath: "/fonts/";
+    @font-face {
+        font-family: "#{$name}";
+        src: url("#{$fontsPath}#{$file}.eot");
+        src: url("#{$fontsPath}#{$file}.eot?#iefix") format("embedded-opentype"),
+        url("#{$fontsPath}#{$file}.woff2") format("woff2"),
+        url("#{$fontsPath}#{$file}.woff") format("woff"),
+        url("#{$fontsPath}#{$file}.ttf") format("truetype"),
+        url("#{$fontsPath}#{$file}.svg?#webfont") format("svg");
+    }
+}
+
+@mixin text-format($ff: null, $size: null, $color: null, $weight: null, $lh: null, $align: null) {
+    @if $ff { font-family: $ff };
+    @if $size { font-size: $size };
+    @if $color { color: $color };
+    @if $weight { weight: $weight };
+    @if $lh { line-height: $lh} ;
+    @if $align { text-align: $align };
+}
