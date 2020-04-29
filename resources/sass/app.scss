@@ -6,13 +6,16 @@
 @import "./settings/_palette";
 @import "./settings/_default";
 
+@import "./components/_nav.scss";
+@import "./components/_menu-icon.scss";
+
 main {
     background-image: url("../images/vim-split-windows-filtered.png");
     background-attachment: fixed;
     background-position: center;
     height: 100vh;
 }
-div {
-    color: $white;
-    font-family: JetBrainsMonoBold;
-}
+
+
+
+

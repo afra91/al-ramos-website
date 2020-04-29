@@ -1,3 +1,3 @@
 require('./bootstrap');
-
-console.log('Testing');
+require('./nav');
+require('./menu-icon');

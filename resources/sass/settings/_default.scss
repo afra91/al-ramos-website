@@ -1,5 +1,12 @@
-html,
-body {
+* {
+    box-sizing: inherit;
+    &:before,
+    &:after {
+        box-sizing: inherit;
+    }
+}
+
+html, body {
     margin: 0;
     padding: 0;
     background: $black;
@@ -27,4 +34,4 @@ a {
     }
 }
 
-    
+

@@ -1,0 +1,181 @@
+.menu-icon {
+    $color: $white;
+    $duration: 1.6s;
+    $mTop: 2;
+    $rTop: -1;
+    $mMiddle: 1;
+    $rMiddle: 1;
+    $mBottom: 0;
+    $rBottom: 1;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    position: relative;
+    border: none;
+    background: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    -webkit-appearence: none;
+    -webkit-tap-highlight-color: transparent;
+
+    &:before,
+    &:after {
+        content: '';
+        width: 32px;
+        height: 4px;
+        border-radius: 2px;
+        background: $color;
+    }
+
+    &__wrapper {
+        position: absolute;
+        right: 5rem;
+        top: 3.2rem;
+        z-index: 100;
+        width: 34px;
+        display: block;
+        cursor: pointer;
+
+        @media (max-width: 640px) {
+            right: 1rem;
+        }
+
+    }
+
+    &__middle-bar {
+        width: 32px;
+        height: 4px;
+        border-radius: 2px;
+        background: $color;
+        margin: 6px 0;
+
+        &.is-animated {
+            animation: moveMiddleBar $duration linear forwards reverse;
+        }
+
+        &.is-active {
+            animation-direction: normal;
+        }
+
+    }
+
+    &.is-animated {
+        animation: burger $duration linear forwards reverse;
+
+        &:before {
+            animation: moveTopBar $duration linear forwards reverse;
+        }
+
+        &:after {
+            animation: moveBottomBar $duration linear forwards reverse;
+        }
+
+    }
+
+    &.is-active {
+
+        &:before {
+            animation-direction: normal;
+        }
+
+        &:after {
+            animation-direction: normal;
+        }
+
+    }
+
+    @keyframes burger {
+        15% {
+            transform: translateY(8px);
+        }
+        30%,
+        40% {
+            transform: none;
+        }
+        60% {
+            transform: translateY(12px);
+        }
+        75% {
+            transform: translateY(-16px);
+        }
+        100% {
+            transform: translateY(-10px);
+        }
+    }
+
+    @keyframes moveBottomBar {
+        15%,
+        50% {
+            transform: translateY(calc(10px * #{$mBottom}));
+        }
+        30% {
+            transform: translateY(calc(-6px * #{$mBottom}));
+        }
+        35% {
+            transform: translateY(calc(-8px * #{$mBottom}));
+        }
+        65% {
+            transform: translateY(calc(10px * #{$mBottom})) rotate(calc(60deg * #{$rBottom}));
+        }
+        90% {
+            transform: translateY(calc(10px * #{$mBottom})) rotate(calc(40deg * #{$rBottom}));
+        }
+        80%,
+        100% {
+            transform: translateY(calc(10px * #{$mBottom})) rotate(calc(45deg * #{$rBottom}));
+        }
+    }
+
+    @keyframes moveMiddleBar {
+        15%,
+        50% {
+            transform: translateY(calc(10px * #{$mMiddle}));
+        }
+        30% {
+            transform: translateY(calc(-6px * #{$mMiddle}));
+        }
+        35% {
+            transform: translateY(calc(-8px * #{$mMiddle}));
+        }
+        65% {
+            transform: translateY(calc(10px * #{$mMiddle})) rotate(calc(60deg * #{$rMiddle}));
+        }
+        90% {
+            transform: translateY(calc(10px * #{$mMiddle})) rotate(calc(40deg * #{$rMiddle}));
+        }
+        80%,
+        100% {
+            transform: translateY(calc(10px * #{$mMiddle})) rotate(calc(45deg * #{$rMiddle}));
+        }
+    }
+
+    @keyframes moveTopBar {
+        15%,
+        50% {
+            transform: translateY(calc(10px * #{$mTop}));
+        }
+        30% {
+            transform: translateY(calc(-6px * #{$mTop}));
+        }
+        35% {
+            transform: translateY(calc(-8px * #{$mTop}));
+        }
+        65% {
+            transform: translateY(calc(10px * #{$mTop})) rotate(calc(60deg * #{$rTop}));
+        }
+        90% {
+            transform: translateY(calc(10px * #{$mTop})) rotate(calc(40deg * #{$rTop}));
+        }
+        80%,
+        100% {
+            transform: translateY(calc(10px * #{$mTop})) rotate(calc(45deg * #{$rTop}));
+        }
+    }
+
+}
+
