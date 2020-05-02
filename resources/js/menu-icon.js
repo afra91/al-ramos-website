@@ -11,5 +11,5 @@ function toggle() {
     btn.parentNode.replaceChild(newBtn, btn);
     newBtn.addEventListener('click', toggle);
     let newMiddleBar = middleBar.cloneNode(true);
-    newMiddleBar.parentNode.replaceChild(MiddleBar, newMiddleBar);
+    middleBar.parentNode.replaceChild(newMiddleBar, middleBar);
 }

@@ -1,46 +1,53 @@
-$('.menu-icon__wrapper').click(function() {
-    $('.menu-icon__wrapper').css('pointer-events', 'none');
-    var navWrapper = $('.nav__wrapper');
+import velocity from 'velocity-animate';
+import 'velocity-animate/velocity.ui.min.js';
 
-    navWrapper.toggleClass('menu-icon__wrapper--active');
-    if (navWrapper.hasClass('menu-icon__wrapper--active')) {
-        navWrapper.velocity('transition.slideLeftIn', {
+let menuIconWrapper = document.querySelector('.menu-icon__wrapper');
+let navWrapper = document.querySelector('.nav__wrapper');
+let navLi = document.querySelectorAll('.nav__li');
+let navLink = document.querySelectorAll('.nav__link');
+
+menuIconWrapper.addEventListener('click', function() {
+    menuIconWrapper.style.pointerEvents = 'none';
+
+    navWrapper.classList.toggle('is-active');
+    if (navWrapper.classList.contains('is-active')) {
+        Velocity(navWrapper, 'transition.slideLeftIn', {
             duration: 300,
             delay: 0,
             begin: function() {
-                $('.nav__li').velocity('transition.perspectiveLeftIn', {
+                Velocity(navLi, 'transition.perspectiveLeftIn', {
                     stagger: 150,
                     delay: 0,
                     complete: function() {
-                        $('.nav__link').velocity({
+                        Velocity(navLink, {
                             opacity: [1, 0],
                         }, {
                             delay: 10,
                             duration: 140
                         });
-                        $('.menu-icon__wrapper').css('pointer-events', 'auto');
+                        menuIconWrapper.style.pointerEvents = 'auto';
                     }
                 })
             }
         })
 
     } else {
-        $('.menu-icon__wrapper').css('pointer-events', 'none');
-        $('.nav__li').velocity('transition.perspectiveRightOut', {
+        menuIconWrapper.style.pointerEvents = 'none';
+        Velocity(navLi, 'transition.perspectiveRightOut', {
             stagger: 150,
             delay: 0,
             complete: function() {
-                navWrapper.velocity('transition.fadeOut', {
+                Velocity(navWrapper, 'transition.fadeOut', {
                     delay: 0,
                     duration: 300,
                     complete: function() {
-                        $('.nav__link').velocity({
+                        Velocity(navLink, {
                             opacity: [0, 1],
                         }, {
                             delay: 0,
                             duration: 50
                         });
-                        $('.menu-icon__wrapper').css('pointer-events', 'auto');
+                        menuIconWrapper.style.pointerEvents = 'auto';
                     }
                 });
             }

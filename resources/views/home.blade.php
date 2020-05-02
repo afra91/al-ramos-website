@@ -59,9 +59,6 @@
         @if(config('app.env') == 'local')
         <script src="http://localhost:35729/livereload.js"></script>
         @endif 
-        <script src="https://code.jquery.com/jquery-3.5.0.slim.min.js" integrity="sha256-MlusDLJIP1GRgLrOflUQtshyP0TwT/RHXsI1wWGnQhs=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.ui.min.js"></script>
         <script src={{ mix('js/app.js') }}></script>
     </body>
 </html>
