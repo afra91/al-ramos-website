@@ -21,6 +21,7 @@
     },
     "dependencies": {
         "bootstrap-4-grid": "^3.4.0",
+        "typed.js": "^2.0.11",
         "velocity-animate": "^1.5.2"
     }
 }

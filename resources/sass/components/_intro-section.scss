@@ -1,0 +1,23 @@
+.intro-section {
+    &__greeting-text-wrapper {
+        width: 100%; 
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__greeting-text-wrapper {
+        padding: 20px;
+    }
+    &__greeting-text {
+        @include text-format(JetBrainsMonoExtraBold, 60px, $white, center, null, 95px);
+        @include laptop-down() {
+            font-size: 40px; 
+            line-height: 70px;
+        }
+        @include mobile-lg-down() {
+            font-size: 20px; 
+            line-height: 50px;
+        }
+    }
+}

@@ -11,11 +11,77 @@
     }
 }
 
-@mixin text-format($ff: null, $size: null, $color: null, $weight: null, $lh: null, $align: null) {
+@mixin text-format($ff: null, $size: null, $color: null, $align: null, $weight: null, $lh: null) {
     @if $ff { font-family: $ff };
     @if $size { font-size: $size };
     @if $color { color: $color };
     @if $weight { weight: $weight };
     @if $lh { line-height: $lh} ;
     @if $align { text-align: $align };
+}
+
+@mixin mobile() {
+    @media (min-width: mobile) and (max-width: #{$mobile-lg - 1}) {
+        @content
+    }
+}
+
+@mixin mobile-lg-down() {
+    @media (max-width: #{$tablet - 1}) {
+        @content
+    }
+}
+
+@mixin mobile-lg() {
+    @media (min-width: $mobile-lg) and (max-width: #{$tablet - 1}) {
+        @content
+    }
+}
+
+@mixin mobile-lg-up() {
+    @media (min-width: $mobile-lg) {
+        @content
+    }
+}
+
+@mixin tablet-down() {
+    @media (max-width: #{$laptop - 1}) {
+        @content
+    }
+}
+
+@mixin tablet() {
+    @media (min-width: $tablet) and (max-width: #{$laptop - 1}) {
+        @content
+    }
+}
+
+@mixin tablet-up() {
+    @media (min-width: $tablet) {
+        @content
+    }
+}
+
+@mixin laptop-down() {
+    @media (max-width: #{$desktop - 1}) {
+        @content
+    }
+}
+
+@mixin laptop() {
+    @media (min-width: $laptop) and (max-width: #{$desktop - 1}) {
+        @content
+    }
+}
+
+@mixin laptop-up() {
+    @media (min-width: $laptop) {
+        @content
+    }
+}
+
+@mixin desktop() {
+    @media (min-width: $desktop) {
+        @content
+    }
 }

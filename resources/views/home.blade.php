@@ -16,6 +16,15 @@
         <main role="main">
             <div class="intro-section">
                 <section>
+                    <div class="intro-section__greeting-text-wrapper">
+                        <strong class="intro-section__greeting-text">
+                            Hi, my name is Al Ramos 
+                            <div>
+                                and I am <span class="intro-section__typed-text"></span>
+                            </div> 
+                            based in Lima, Peru.
+                        </strong>
+                    </div>
                 </section>
                 <div class="nav__wrapper">
                     <nav class="nav" role="navigation">
